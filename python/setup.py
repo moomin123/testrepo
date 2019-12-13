@@ -5,7 +5,6 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="moomin123",  # Replace with your own username
-    version="0.0.1",
     author="Example Author",
     author_email="author@example.com",
     description="A small example package",
@@ -19,4 +18,6 @@ setuptools.setup(
         "Operating System :: OS Independent",
     ],
     python_requires=">=3.6",
+    use_scm_version={"root": "..", "relative_to": __file__},
+    setup_requires=["setuptools_scm"],
 )
