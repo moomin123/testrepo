@@ -39,7 +39,7 @@ postsubmits:
           git status
           git log -3
           cat README.md
-          sleep 15
+          exit 1
     branches:
     - ^master$
 
