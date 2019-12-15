@@ -14,6 +14,17 @@ plank:
         path_strategy: explicit
       gcs_credentials_secret: gcs-credentials
 
+slack_reporter_configs:
+  moomin123/testrepo:
+    job_types_to_report: 
+    - presubmit
+    - postsubmit
+    job_states_to_report:
+    - failure
+    - error
+    channel: david-alerts
+    report_template: "Job {{.Spec.Job}} of type {{.Spec.Type}} ended with state {{.Status.State}}. <{{.Status.URL}}|View logs>"
+
 postsubmits:
   moomin123/testrepo:
   - name: branch-filter-master
