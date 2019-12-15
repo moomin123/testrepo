@@ -59,16 +59,16 @@ postsubmits:
     decorate: true        
     spec:
       volumes:
-      - name: pypirc
-        secret:
-          secretName: pypirc
+      - name: docker-socket
+        hostPath:
+          path: /var/run/docker.sock
       containers:
       - image: google/cloud-sdk:273.0.0
         volumeMounts:
-        - name: pypirc 
-          mountPath: /root/.pypirc
-          subPath: .pypirc
-          readOnly: true
+        - name: docker-socket
+          mountPath: /var/run/docker.sock
+        securityContext:
+          privileged: true
         command: 
         - scripts/publish_docker_images.sh
     branches:
