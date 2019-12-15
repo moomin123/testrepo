@@ -69,7 +69,8 @@ postsubmits:
           mountPath: /root/.pypirc
           subPath: .pypirc
           readOnly: true
-        command: scripts/publish_docker_images.sh
+        command: 
+        - scripts/publish_docker_images.sh
     branches:
     # Filter on tags with semantic versioning, prefixed with "v"
     # https://github.com/semver/semver/issues/232
