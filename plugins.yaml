@@ -1,0 +1,7 @@
+plugins:
+  moomin123/testrepo:
+  - trigger
+
+triggers:
+- repos:
+  - moomin123/testrepo
