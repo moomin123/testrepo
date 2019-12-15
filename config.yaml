@@ -63,7 +63,7 @@ postsubmits:
         secret:
           secretName: pypirc
       containers:
-      - image: python:3
+      - image: google/cloud-sdk:273.0.0
         volumeMounts:
         - name: pypirc 
           mountPath: /root/.pypirc
